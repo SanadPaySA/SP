@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SanadPay - سند باي</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #8A2BE2; /* بنفسجي - لون أساسي جديد */
+            --secondary-color: #2e8b57; /* أخضر SanadPay فاتح */
+            --accent-color: #3cb371; /* أخضر فاتح SanadPay */
+            --light-bg: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-color: #2d3748;
+            --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --border-color: #e2e8f0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            direction: rtl;
+            background: linear-gradient(135deg, #f0f4f8 0%, #e2e8f0 100%);
+            color: var(--text-color);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            background-color: var(--card-bg);
+            border-radius: 16px;
+            box-shadow: var(--shadow);
+            padding: 40px 30px;
+            width: 100%;
+            max-width: 500px;
+            text-align: center;
+            border: 1px solid var(--border-color);
+        }
+
+        h1 {
+            color: var(--primary-color);
+            margin-bottom: 35px;
+            font-size: 32px;
+            font-weight: 700;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+            h1::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                right: 35%;
+                width: 30%;
+                height: 3px;
+                background: linear-gradient(to left, var(--primary-color), var(--accent-color));
+                border-radius: 3px;
+            }
+
+        .button-group {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+            margin-top: 25px;
+        }
+
+        .btn {
+            padding: 18px 20px;
+            font-size: 17px;
+            cursor: pointer;
+            border: none;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            font-weight: 600;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-primary {
+            background: linear-gradient(to left, #9b4dff, var(--primary-color));
+            color: white;
+        }
+
+        .btn-secondary {
+            background: linear-gradient(to left, var(--secondary-color), var(--accent-color));
+            color: white;
+        }
+
+        .btn-accent {
+            background: linear-gradient(to left, #2e8b57, var(--secondary-color));
+            color: white;
+        }
+
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .btn:active {
+            transform: translateY(-2px);
+        }
+
+        .btn i {
+            font-size: 20px;
+        }
+
+        .info-text {
+            margin-top: 30px;
+            color: #718096;
+            font-size: 15px;
+            line-height: 1.6;
+            padding: 0 10px;
+        }
+
+        .footer {
+            margin-top: 25px;
+            font-size: 14px;
+            color: #718096;
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 30px 20px;
+            }
+
+            h1 {
+                font-size: 26px;
+            }
+
+            .btn {
+                padding: 16px 18px;
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>SanadPay</h1>
+
+        <div class="button-group">
+            <button class="btn btn-primary" onclick="window.open('https://sanadpay.sa/', '_blank')">
+                <i class="fas fa-globe"></i>
+                SanadPay.sa
+            </button>
+
+            <button class="btn btn-secondary" onclick="window.open('tel:920031320', '_self')">
+                <i class="fas fa-phone"></i>
+                920031320
+            </button>
+
+            <button class="btn btn-accent" onclick="window.open('https://wa.me/966530703083', '_blank')">
+                <i class="fab fa-whatsapp"></i>
+                0530703083
+            </button>
+        </div>
+
+        <div class="footer">
+            Sanad Pay - سند باي
+        </div>
+    </div>
+
+    <script>
+        // إضافة تأثيرات تفاعلية إضافية
+        document.addEventListener('DOMContentLoaded', function () {
+            const buttons = document.querySelectorAll('.btn');
+
+            buttons.forEach(button => {
+                button.addEventListener('mouseenter', function () {
+                    this.style.transform = 'translateY(-5px)';
+                });
+
+                button.addEventListener('mouseleave', function () {
+                    this.style.transform = 'translateY(0)';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
